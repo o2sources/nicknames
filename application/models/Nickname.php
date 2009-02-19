@@ -41,6 +41,28 @@ class Nickname {
 	}
 	
 	/**
+	* Updates an entry
+	*
+	* @param int $id, array $data
+	* @return int|string
+	*/
+	public function update($id, array $data) {
+		if (!ereg('([0-9]+)', $id))
+			return false;
+		
+		$fields = $this->getTable()->info(Zend_Db_Table_Abstract::COLS);
+		
+		foreach ($data as $field => $value) {
+			if (!in_array($field, $fields)) {
+				unset($data[$field]);
+			}
+		}
+		
+		print_r($data);
+		return $this->getTable()->update($data, 'id = '.$id);
+	}
+	
+	/**
 	 * Fetch all entries
 	 * 
 	 * @return Zend_Db_Table_Rowset_Abstract

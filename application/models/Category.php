@@ -43,7 +43,7 @@ class Category {
 	
 	
 	/**
-	* Updated an entry
+	* Updates an entry
 	*
 	* @param int $id, array $data
 	* @return int|string
