@@ -63,6 +63,16 @@ class Nickname {
 	}
 	
 	/**
+	* deletes an entry
+	*
+	* @param int $id
+	* @return int|string
+	*/
+	public function delete($id) {
+		return $this->getTable()->delete('id = '.$id);
+	}
+	
+	/**
 	 * Fetch all entries
 	 * 
 	 * @return Zend_Db_Table_Rowset_Abstract

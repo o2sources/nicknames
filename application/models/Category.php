@@ -62,6 +62,16 @@ class Category {
 		return $this->getTable()->update($data, 'id = '.$id);
 	}
 	
+	/**
+	* deletes an entry
+	*
+	* @param int $id
+	* @return int|string
+	*/
+	public function delete($id) {
+		return $this->getTable()->delete('id = '.$id);
+	}
+	
 	
 	/**
 	 * Fetch all entries

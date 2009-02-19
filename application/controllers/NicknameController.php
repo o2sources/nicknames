@@ -58,5 +58,9 @@ class NicknameController extends AppGlobalController {
 	
 	public function deleteAction() {
 		$id = (int)$this->_getParam('id');
+		Nickname::getInstance()->delete($id);
+		
+		$this->flash()->addMessage('Le pseudonyme a correctement été supprimé.');
+		$this->_helper->redirector('list', 'admin');
 	}
 }

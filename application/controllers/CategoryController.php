@@ -54,4 +54,12 @@ class CategoryController extends AppGlobalController  {
 		} else
 			return $this->_helper->redirector('edit', 'category', null, array('id' => $id));
 	}
+	
+	public function deleteAction() {
+		$id = (int)$this->_getParam('id');
+		Category::getInstance()->delete($id);
+		
+		$this->flash()->addMessage('La catégorie a correctement été supprimée.');
+		$this->_helper->redirector('list', 'admin');
+	}
 }

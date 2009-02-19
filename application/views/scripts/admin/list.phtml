@@ -11,7 +11,12 @@
 							'controller' => 'nickname',
 							'action' => 'edit',
 							'id' => $nickname['id']
-						)); ?>" style="font-style:italic; ">Mettre à jour le pseudonyme</a>
+						)); ?>" style="font-style:italic; ">Mettre à jour le pseudonyme</a> -
+						<a href="<?= $this->url(array(
+							'controller' => 'nickname',
+							'action' => 'delete',
+							'id' => $nickname['id']
+						)); ?>" style="font-style:italic; ">Supprimer le pseudonyme</a>
 					</li>
 				<?php endforeach; ?>
 			</ul>
@@ -20,7 +25,12 @@
 				'controller' => 'category',
 				'action' => 'edit',
 				'id' => $category['id']
-			)); ?>" style="font-style:italic; ">Mettre à jour la catégorie</a>
+			)); ?>" style="font-style:italic; ">Mettre à jour la catégorie</a> -
+			<a href="<?= $this->url(array(
+				'controller' => 'category',
+				'action' => 'delete',
+				'id' => $category['id']
+			)); ?>" style="font-style:italic; ">Supprimer la catégorie</a>
 		</li>
 	<?php endforeach; ?>
 </ul>
