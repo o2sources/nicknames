@@ -1,0 +1,13 @@
+<h1>Catégories et pseudonymes</h1>
+<ul>
+	<?php foreach($this->liste as $category): ?>
+		<li>
+			<h2><?= $category['name'] ?>
+			<ul>
+				<?php foreach($category['nicknames'] as $nickname): ?>
+					<li><?= $nickname['name'] ?></li>
+				<?php endforeach; ?>
+			</ul>
+		</li>
+	<?php endforeach; ?>
+</ul>
