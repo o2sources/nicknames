@@ -6,6 +6,24 @@
 	  <?= $this->headLink()->appendStylesheet('/css/global.css') ?>
 	</head> 
 	<body>
-		<?= $this->layout()->content ?>
+		<div id="menu">
+			<ul>
+				<li>
+					<a href="<?= $this->url(array(
+			          'controller' => 'index',
+			          'action' => 'index'
+			        )); ?>">Accueil</a>
+				</li>
+				<li>
+					<a href="<?= $this->url(array(
+			          'controller' => 'admin',
+			          'action' => 'list'
+			        )); ?>">Liste</a>
+		        </li>
+			</ul>
+		</div>
+		<div id="content">
+			<?= $this->layout()->content ?>
+		</div>
 	</body>
 </html>
