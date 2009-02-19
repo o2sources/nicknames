@@ -13,5 +13,4 @@ L'outil est notamment utilisé lors de parties Quake III afin de distribuer des 
 Et la lancer dans votre navigateur :)
 
 == ToDo
-- Ajout des fonctionnalités d'ajout de catégories et d'ajout de pseudonymes
 - Ajout de la possibilité de s'enregistrer afin d'avoir une liste d'utilisateurs au lieu de taper manuellement des emails
