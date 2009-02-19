@@ -63,4 +63,11 @@ class Nickname {
 		$select = $this->getTable()->select()->where('category_id = ?', $id);
 		return $this->getTable()->fetchAll($select)->toArray();
 	}
+	
+	public function get_rand($category, $number) {
+		$number = 3;
+		
+		$select = $this->getTable()->select()->where('category_id = ?', $category)->order('rand()')->limit($number, 0);
+		return $this->getTable()->fetchAll($select)->toArray();
+	}
 }
