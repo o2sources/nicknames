@@ -5,7 +5,14 @@
 			<h2><?= $category['name'] ?></h2>			
 			<ul>
 				<?php foreach($category['nicknames'] as $nickname): ?>
-					<li><?= $nickname['name'] ?></li>
+					<li>
+						<?= $nickname['name'] ?> - 
+						<a href="<?= $this->url(array(
+							'controller' => 'nickname',
+							'action' => 'edit',
+							'id' => $nickname['id']
+						)); ?>" style="font-style:italic; ">Mettre à jour le pseudonyme</a>
+					</li>
 				<?php endforeach; ?>
 			</ul>
 			
@@ -20,4 +27,8 @@
 <a href="<?= $this->url(array(
 	'controller' => 'category',
 	'action' => 'add'
-)); ?>">Ajouter une nouvelle catégorie</a>
+)); ?>">Ajouter une nouvelle catégorie</a> - 
+<a href="<?= $this->url(array(
+	'controller' => 'nickname',
+	'action' => 'add'
+)); ?>">Ajouter un nouveau pseudonyme</a>

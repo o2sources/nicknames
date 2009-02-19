@@ -1,0 +1,8 @@
+<h1>
+	<?php if (!isset($this->id)): ?>
+		Créer un nouveau pseudonyme
+	<?php else: ?>
+		Modifier un pseudonyme existant
+	<?php endif; ?>
+</h1>
+<?= $this->form ?>
