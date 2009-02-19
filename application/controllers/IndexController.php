@@ -34,11 +34,13 @@ class IndexController extends AppGlobalController  {
 				
 				foreach($emails as $i => $email) {
 					//We send the email with the nickname
-					$mail = new Zend_Mail();
-					$mail->setBodyText('Votre pseudonyme pour Quake III est : '.$nicknames[$i]['name'])
-					->setFrom('noreply@quakerox.o2sources', 'Quake')
-					->addTo($email)
-					->setSubject('Votre pseudonyme pour Quake III')
+					$mail = new Mail(
+						'Pseudonyme aléatoire',
+						'Votre pseudonyme aléatoire est : '.$nicknames[$i]['name'],
+						'noreply@quakerox.o2sources.com',
+						'Nickname Mailer'
+					);
+					$mail->addTo($email)
 					->send();
 				}
 				$this->flash()->addMessage('Les emails ont correctement été envoyés.');
