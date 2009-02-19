@@ -46,9 +46,9 @@ class Category {
 	 * 
 	 * @return Zend_Db_Table_Rowset_Abstract
 	 */
-	public function fetch($id = null) {
+	public function fetch($id = null, $conditions = '1') {
 		if ($id == null) {
-			$return = $this->getTable()->fetchAll('1')->toArray();
+			$return = $this->getTable()->fetchAll($conditions)->toArray();
 			foreach($return as $i => $uplet) {
 				$return[$i]['nicknames'] = Nickname::getInstance()->fetch_by_category($return[$i]['id']);
 			}
@@ -59,5 +59,15 @@ class Category {
 		}
 		
 		return $return;
+	}
+	
+	public function fetch_select($conditions = '1') {
+		$datas = $this->fetch(null, $conditions);
+		$ret = array();
+		
+		foreach($datas as $uplet) {
+			$ret[$uplet['id']] = $uplet['name'];
+		}
+		return $ret;
 	}
 }
