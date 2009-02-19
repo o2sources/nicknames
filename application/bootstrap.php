@@ -36,6 +36,7 @@ Zend_Layout::startMvc(APPLICATION_PATH . '/layouts/scripts');
 // use -- in this case, XHTML1 Strict.
 $view = Zend_Layout::getMvcInstance()->getView();
 $view->doctype('XHTML1_STRICT');
+$view->addHelperPath(APPLICATION_PATH . '/views/helpers', 'Helper_');
 
 // CONFIGURATION - Setup the configuration object
 // The Zend_Config_Ini component will parse the ini file, and resolve all of
@@ -65,6 +66,19 @@ Zend_Db_Table_Abstract::setDefaultAdapter($dbAdapter);
 $registry = Zend_Registry::getInstance();
 $registry->configuration = $configuration;
 $registry->dbAdapter     = $dbAdapter;
+
+//Defining the SMTP server
+if (isset($configuration->mail->server)) {
+	$config = array(
+		'auth' => $configuration->mail->auth,
+		'username' => $configuration->mail->username,
+		'password' => $configuration->mail->password,
+		'ssl' => $configuration->mail->ssl,
+		'port' => $configuration->mail->port,
+	);
+	$tr = new Zend_Mail_Transport_Smtp($configuration->mail->server, $config);
+	Zend_Mail::setDefaultTransport($tr);
+}
 
 // CLEANUP - remove items from global scope
 // This will clear all our local boostrap variables from the global scope of 
