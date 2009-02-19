@@ -1,13 +1,14 @@
 = Nicknames
 Nicknames est une application construite avec Zend Framework permettant de placer divers pseudonymes et de les attribuer à diverses personnes de manière anonyme (en les envoyant par email).
+
 L'outil est notamment utilisé lors de parties Quake III afin de distribuer des pseudonymes aléatoirement et que l'on ne sache pas qui est qui.
 
 
 == Installation
-Télécharger l'application et la placer sur le disque dur.
-Faire pointer une vhost (si apache) sur le dossier "public".
-Puis créer la base de données, le schema étant dans data/db/database.sql
-Configurer l'application dans app/app.ini
+- Télécharger l'application et la placer sur le disque dur.
+- Faire pointer une vhost (si apache) sur le dossier "public".
+- Puis créer la base de données, le schema étant dans data/db/database.sql
+- Configurer l'application dans app/app.ini
 
 Et la lancer dans votre navigateur :)
 
