@@ -1,4 +1,28 @@
-body
-{
-    font-family: Arial;
+body {
+	font-family: Arial;
+}
+#flash {
+	text-align: center;
+	font-weight: bold;
+	color: red;
+}
+
+#menu {
+	width: 10%;
+	border: 1px solid #CCC;
+	float: left;
+	margin: 0px 0px 15px 0px;
+}
+#content {
+	width: 80%;
+	padding: 5px;
+	margin: 0px  0px 15px 15px;
+	border: 1px solid #CCC;
+	float: left;
+}
+#footer {
+	clear: both;
+	width: 91%;
+	border: 1px solid #CCC;
+	padding: 5px;
 }
