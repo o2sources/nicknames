@@ -1,2 +1,8 @@
-<h1>Créer une nouvelle catégorie</h1>
+<h1>
+	<?php if (!isset($this->id)): ?>
+		Créer une nouvelle catégorie
+	<?php else: ?>
+		Modifier une catégorie existante
+	<?php endif; ?>
+</h1>
 <?= $this->form ?>

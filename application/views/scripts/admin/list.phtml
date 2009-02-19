@@ -2,12 +2,18 @@
 <ul>
 	<?php foreach($this->liste as $category): ?>
 		<li>
-			<h2><?= $category['name'] ?></h2>
+			<h2><?= $category['name'] ?></h2>			
 			<ul>
 				<?php foreach($category['nicknames'] as $nickname): ?>
 					<li><?= $nickname['name'] ?></li>
 				<?php endforeach; ?>
 			</ul>
+			
+			<a href="<?= $this->url(array(
+				'controller' => 'category',
+				'action' => 'edit',
+				'id' => $category['id']
+			)); ?>" style="font-style:italic; ">Mettre à jour la catégorie</a>
 		</li>
 	<?php endforeach; ?>
 </ul>
