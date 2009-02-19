@@ -1,5 +1,5 @@
 <?php 
-class ErrorController extends Zend_Controller_Action {
+class ErrorController extends AppGlobalController {
 	
 	public function errorAction() { 
 		$this->_helper->viewRenderer->setViewSuffix('phtml');

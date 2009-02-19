@@ -1,5 +1,5 @@
 <?php
-class AdminController extends Zend_Controller_Action  {
+class AdminController extends AppGlobalController {
 	
 	/**
 	 * Shows a list of every category and every nickname
