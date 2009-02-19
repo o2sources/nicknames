@@ -23,6 +23,9 @@
 			</ul>
 		</div>
 		<div id="content">
+			<?php if ($this->flash(true)->has_messages()): ?>
+	          <div id="flash"><?= $this->flash(); ?></div>
+	        <?php endif; ?>
 			<?= $this->layout()->content ?>
 		</div>
 	</body>
